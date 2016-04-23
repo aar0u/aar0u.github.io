@@ -1,26 +1,26 @@
 ---
 layout: page
 title: "About"
-description: "."
+description: "This is me."
 header-img: "img/post-bg-2015.jpg"
+duoshuo_comment: false
 ---
-
 <!-- Language Selector -->
-<input class="btn-default" type="button" value="English" onclick="onLanChange(1)">
-<input class="btn-default" type="button" value="中文" onclick="onLanChange(0)">
+<ul class="nav nav-tabs">
+    <li id="en" onclick="langChange(this, event)"><a href="#">English</a></li>
+    <li id="zh" class="active" onclick="langChange(this, event)"><a href="#">中文</a></li>
+</ul>
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-
-    <!--copied from markdown -->
-    <blockquote><p>往事如风<br>
+    <blockquote><p>往事如风。<br>
     世界那么大，我想去看看。</p></blockquote>
 
     <p>我叫 Aaron.</p>
 </div>
 
 <!-- English Version -->
-<div class="en post-container">
+<div class="en post-container" style="display: none;">
     <blockquote><p>I want a solution for everything.<br>
     Which doesn't exist.</p></blockquote>
 
@@ -29,45 +29,29 @@ header-img: "img/post-bg-2015.jpg"
 
 <!-- Handle Language Change -->
 <script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $zh.style.display = "block";
-            $en.style.display = "none";
-        }
-    }
+    var seczh = document.querySelector(".zh");
+    var secen = document.querySelector(".en");
+    var btnzh = document.querySelector("#zh");
+    var btnen = document.querySelector("#en");
 
     // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#zh"
+    function langChange(target, event){
+        event.preventDefault();
+        if(target === btnen){
+            btnzh.classList.remove('active');
+            btnen.classList.add('active');
+            secen.style.display = "block";
+            seczh.style.display = "none";
         }else{
-            window.location.hash = "#en"
+            btnen.classList.remove('active');
+            btnzh.classList.add('active');
+            seczh.style.display = "block";
+            secen.style.display = "none";
         }
     }
-
-    // init
-    _render();
 </script>
 
-
-
-{% if site.duoshuo_username %}
+{% if page.duoshuo_comment && site.duoshuo_username %}
 <!-- 多说评论框 start -->
 <div class="comment">
     <div class="ds-thread"
