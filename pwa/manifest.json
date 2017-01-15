@@ -1,0 +1,10 @@
+{
+  "name": "Spotjoy",
+  "short_name": "Spotjoy",
+  "description": "Spotjoy",
+  "background_color": "#fff",
+  "theme_color": "#000",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
