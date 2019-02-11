@@ -3,7 +3,7 @@ layout:     post
 title:      "香港"
 date:       2014-05-04 12:00:00
 author:     "Aaron"
-header-img: "img/post-bg-hk.jpg"
+header-img: "img/ar-post/post-bg-hk.jpg"
 tags:
     - 香港
     - 旅行

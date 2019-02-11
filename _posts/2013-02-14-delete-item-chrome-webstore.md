@@ -3,7 +3,6 @@ layout:     post
 title:      "在 Chrome web store Developer Dashboard 删除无用的 App"
 date:       2013-02-14
 author:     "Aaron"
-header-img: "img/post-bg-js-version.jpg"
 tags:
     - Javascript
 ---
